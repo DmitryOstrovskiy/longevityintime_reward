@@ -1,0 +1,7 @@
+{% for reward in rewards %}
+    <h2>{{ reward.name }}</h2>
+    <p>{{ reward.description }}</p>
+    <img src="{{ reward.image.url }}" alt="{{ reward.name }}">
+{% empty %}
+    <p>No rewards available.</p>
+{% endfor %}

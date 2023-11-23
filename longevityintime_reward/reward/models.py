@@ -19,3 +19,12 @@ class Wallet(models.Model):
     def __str__(self):
         return self.user.email
 
+
+class Reward(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to='rewards/')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
