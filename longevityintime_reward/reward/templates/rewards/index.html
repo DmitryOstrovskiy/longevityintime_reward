@@ -1,0 +1,31 @@
+{% extends 'rewards/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .bg-image {
+        background-image: url("{% static 'rewards/images/background.jpg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 70vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 20px;
+    }
+  
+    .content-text {
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 10px;
+    }
+  </style>
+  
+  <div class="bg-image">
+      <div class="content-text">
+          <h1>{{title}}</h1>
+          <p>In this application, you can receive rewards for activity on the site</p>
+          <p>To get started, register and log in to the site</p>
+      </div>
+  </div>
+{% endblock %}
