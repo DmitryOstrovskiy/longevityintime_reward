@@ -1,5 +1,7 @@
 from django.urls import path
-from reward.views import HomePageView, AboutPageView, AddWallet, ProfilePage, AddTestCard, RegisterUser, LoginUser, logout_user
+from reward.views import (HomePageView, AboutPageView, AddWallet,
+                          ProfilePage, AddTestCard, RegisterUser,
+                          LoginUser, logout_user)
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='index'),

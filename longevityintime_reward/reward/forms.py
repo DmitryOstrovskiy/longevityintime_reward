@@ -4,19 +4,22 @@ from django.contrib.auth import get_user_model
 from reward.models import Wallet, TestCard
 
 User = get_user_model()
-# from django.contrib.auth.models import User
-
-
-# from django.core.exceptions import ValidationError
-
-# from .models import *
 
 
 class RegisterUserForm(UserCreationForm):
-    username = forms.CharField(label='Login', widget=forms.TextInput(attrs={'class': 'form-input'}))
-    email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'form-input'}))
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
-    password2 = forms.CharField(label='Repeat password', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    '''User registration form class'''
+    username = forms.CharField(label='Login',
+                               widget=forms.TextInput(
+                                   attrs={'class': 'form-input'}))
+    email = forms.EmailField(label='Email',
+                             widget=forms.EmailInput(
+                                 attrs={'class': 'form-input'}))
+    password1 = forms.CharField(label='Password',
+                                widget=forms.PasswordInput(
+                                    attrs={'class': 'form-input'}))
+    password2 = forms.CharField(label='Repeat password',
+                                widget=forms.PasswordInput(
+                                    attrs={'class': 'form-input'}))
 
     class Meta:
         model = User
@@ -24,14 +27,21 @@ class RegisterUserForm(UserCreationForm):
 
 
 class LoginUserForm(AuthenticationForm):
-    username = forms.CharField(label='Login', widget=forms.TextInput(attrs={'class': 'form-input'}))
-    password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    '''User login form class'''
+    username = forms.CharField(label='Login',
+                               widget=forms.TextInput(
+                                   attrs={'class': 'form-input'}))
+    password = forms.CharField(label='Password',
+                               widget=forms.PasswordInput(
+                                   attrs={'class': 'form-input'}))
 
 
 class AddWalletForm(forms.ModelForm):
+    '''Class of the form for adding Wallet data'''
     class Meta:
         model = Wallet
-        fields = ['wallet_address', 'private_key', 'public_key', 'mnemonic_phrase']
+        fields = ['wallet_address', 'private_key', 'public_key',
+                  'mnemonic_phrase']
         widgets = {
             'wallet_address': forms.TextInput(attrs={'class': 'form-input'}),
             'private_key': forms.Textarea(attrs={'cols': 60, 'rows': 10}),
@@ -41,6 +51,7 @@ class AddWalletForm(forms.ModelForm):
 
 
 class AddTestCardForm(forms.ModelForm):
+    '''Class of the TestCard data addition form'''
     class Meta:
         model = TestCard
         fields = ['name', 'parameter', 'parameter_value']
