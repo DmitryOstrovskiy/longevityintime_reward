@@ -45,6 +45,8 @@ class AddWallet(LoginRequiredMixin, DataMixin, CreateView):
         c_def = self.get_user_context(title="Add Wallet")
         return dict(list(context.items()) + list(c_def.items()))
 
+    # We check whether the Wallet was created earlier, if so,
+    # then redirect to the profile page
     def form_valid(self, form):
         wallet = Wallet.objects.filter(user=self.request.user).first()
         if wallet:
@@ -113,11 +115,11 @@ class RegisterUser(DataMixin, CreateView):
 
     # The function of automatic login to the site,
     # after successful registration.
-    # The user is immediately redirected to the profile page.
+    # The user is immediately redirected to the home page.
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('profile')
+        return redirect('index')
 
 
 class LoginUser(DataMixin, LoginView):
