@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import get_user_model
+from reward.models import Wallet, TestCard
 
 User = get_user_model()
 # from django.contrib.auth.models import User
@@ -25,3 +26,26 @@ class RegisterUserForm(UserCreationForm):
 class LoginUserForm(AuthenticationForm):
     username = forms.CharField(label='Login', widget=forms.TextInput(attrs={'class': 'form-input'}))
     password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+
+
+class AddWalletForm(forms.ModelForm):
+    class Meta:
+        model = Wallet
+        fields = ['wallet_address', 'private_key', 'public_key', 'mnemonic_phrase']
+        widgets = {
+            'wallet_address': forms.TextInput(attrs={'class': 'form-input'}),
+            'private_key': forms.Textarea(attrs={'cols': 60, 'rows': 10}),
+            'public_key': forms.Textarea(attrs={'cols': 60, 'rows': 10}),
+            'mnemonic_phrase': forms.TextInput(attrs={'class': 'form-input'}),
+        }
+
+
+class AddTestCardForm(forms.ModelForm):
+    class Meta:
+        model = TestCard
+        fields = ['name', 'parameter', 'parameter_value']
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-input'}),
+            'parameter': forms.TextInput(attrs={'class': 'form-input'}),
+            'parameter_value': forms.TextInput(attrs={'class': 'form-input'}),
+        }
