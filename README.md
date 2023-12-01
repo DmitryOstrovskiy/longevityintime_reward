@@ -58,69 +58,18 @@ python manage.py runserver
 
 ![Снимок экрана 2023-12-01 142153](https://github.com/DmitryOstrovskiy/longevityintime_reward/assets/114443093/09bd622a-03fd-4ee9-9853-405a963ab6e6)
 
-### _Getting a JWT token_
-**POST**: http://127.0.0.1:8000/api/auth/jwt/create/   
-Request example:
-```json
-{
-"email": "ivan@yandex.ru",
-"password": "UserIvan1"
-}  
-```
-Response example:
-```json
-{
-    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5MzkyMjE5NCwianRpIjoiOTg0NzFiYTg1MDgyNDIzN2I1NDZjMTYyZTczNzM2MzUiLCJ1c2VyX2lkIjoyfQ.AA7j0s3gdmfPLamYy9FxomsN00zXfs73-8RGkWFWs2E",
-    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkzOTIyMTk0LCJqdGkiOiJhZTNiMDM0ZjRmMGQ0MmU5OWJhMGVjNTRiODRlMDQ5OCIsInVzZXJfaWQiOjJ9.Rvcm8ZfiRUGi0XsBglMXLzhQn5jV2L40V53X-RZHQbs"
-}
-```
+## _The home page for the registered user_
 
-### _Getting a user profile_
-**GET**: http://127.0.0.1:8000/api/auth/users/2/ - In the Authorization tab, you need to pass an access token
-Response example:
-```json
-{
-    "first_name": "Ivan",
-    "last_name": "Ivanov",
-    "username": "IvanIvanov",
-    "password": "pbkdf2_sha256$260000$Zn7FJL7NbWZve3dbPbqMGJ$/1EmKlUMQ0SfGGClHnxjrSH4xH8PBekFuJAmBjuO048=",
-    "id": 2,
-    "email": "ivan@yandex.ru"
-}
-```
+![Снимок экрана 2023-12-01 143557](https://github.com/DmitryOstrovskiy/longevityintime_reward/assets/114443093/fe143d20-04c4-45c4-b468-cc3d99d83647)
 
-### _Updating the user profile_
-**PUT**: http://127.0.0.1:8000/api/auth/users/2/ - In the Authorization tab, you need to pass an access token
-Request example:
-```json
-{
-"first_name": "Ivan",
-"last_name": "Ivanov",
-"username": "SuperIvan",
-"password": "UserIvan1234",
-"email": "ivan@yandex.ru"
-} 
-```
-Response example:
-```json
-{
-    "first_name": "Ivan",
-    "last_name": "Ivanov",
-    "username": "SuperIvan",
-    "password": "UserIvan1234",
-    "id": 2,
-    "email": "ivan@yandex.ru"
-}
-```
+## _Pages for adding wallets and test cards_
 
-### _Deleting a user profile_
-**DELETE**: http://127.0.0.1:8000/api/auth/users/2/ - In the Authorization tab, you need to pass an access token
-Request example:
-```json
-{
-"current_password": "UserIvan1234"
-}
-```
+![Снимок экрана 2023-12-01 143722](https://github.com/DmitryOstrovskiy/longevityintime_reward/assets/114443093/1edf01c0-3c2d-44a0-acca-d48378a51642)
 
-### Author - Dmitry Ostrovsky
+## _User Profile page_
+
+![Снимок экрана 2023-12-01 143834](https://github.com/DmitryOstrovskiy/longevityintime_reward/assets/114443093/785b4eff-5c08-44cd-8474-944d1492c710)
+
+
+### Author - Dmitry Ostrovskiy
 
