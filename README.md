@@ -16,29 +16,28 @@
 
 ### Technologies
 
-- Python 3.7
-- Django 3.2.20
+- Python 3.9
+- Django 4.2.7
 - Django Rest Framework 3.14.0
-- djangorestframework-simplejwt 4.8.0
-- djoser 2.1.0
-- drf-yasg 1.21.7
-- argon2-cffi 23.1.0
+- pytz 2023.3.post1
+- sqlparse 0.4.4
+- typing_extensions 4.8.0
+- tzdata 2023.3
 
 ###  The project is launched at:
 
 - http://127.0.0.1:8000/
-- http://127.0.0.1:8000/redoc/ - project documentation
 - http://127.0.0.1:8000/admin/ - admin page
 
 ### Project launch
 
 Clone the repository and navigate to it in the command line:
 ```sh
-git clone https://github.com/DmitryOstrovskiy/LongevityInTime_Test_Tasks && cd LongevityInTime_Test_Tasks
+git clone https://github.com/DmitryOstrovskiy/longevityintime_reward && cd longevityintime_reward
 ```
 Install the virtual environment, activate it and install dependencies:
 ```sh
-python -m venv venv && Windows: ```source venv\scripts\activate```; Linux/Mac: ```sorce venv/bin/activate``` && pip install -r requirements.txt
+python -m venv venv && Windows: ```source venv\Scripts\activate```; Linux/Mac: ```sorce venv/bin/activate``` && pip install -r requirements.txt
 ```
 Perform migrations:
 ```sh
@@ -53,31 +52,11 @@ Start the server:
 python manage.py runserver
 ```
 
-### Query examples
+### The appearance of the pages
 
-### _Registration of the user_
-**POST**: http://127.0.0.1:8000/api/auth/users/
+### _Home page for an unregistered user_
 
-Request example:
-```json
-{
-"first_name": "Ivan",
-"last_name": "Ivanov",
-"username": "IvanIvanov",
-"password": "UserIvan1",
-"email": "ivan@yandex.ru"
-} 
-```
-Response example:
-```json
-{
-    "first_name": "Ivan",
-    "last_name": "Ivanov",
-    "username": "IvanIvanov",
-    "email": "ivan@yandex.ru",
-    "id": 2
-}
-```
+![Снимок экрана 2023-12-01 142153](https://github.com/DmitryOstrovskiy/longevityintime_reward/assets/114443093/09bd622a-03fd-4ee9-9853-405a963ab6e6)
 
 ### _Getting a JWT token_
 **POST**: http://127.0.0.1:8000/api/auth/jwt/create/   
